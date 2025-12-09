@@ -6,6 +6,7 @@ import navIcon3 from "../assets/img/nav-icon3.svg";
 import { HashLink } from "react-router-hash-link";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./NavBar.css";
+import myImage from "../assets/img/my-photo.jpg";
 
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");
@@ -33,7 +34,7 @@ export const NavBar = () => {
     <Router>
       <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
         <Container>
-          <p className="intro">My Portfolio</p>
+          <img src={myImage} className="intro-image" alt="Chiranjit Bera" />
           <Navbar.Toggle aria-controls="basic-navbar-nav"></Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">

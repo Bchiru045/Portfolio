@@ -10,17 +10,17 @@ export const Footer = () => {
       <Container>
         <Row className="align-items-center">
             <div className="social-icon">
-              <a href="javascript:void(0);">
+              <button type="button" className="social-btn" aria-label="social link 1">
                 <img src={navIcon1} alt="Icon" />
-              </a>
-              <a href="javascript:void(0);">
+              </button>
+              <button type="button" className="social-btn" aria-label="social link 2">
                 <img src={navIcon2} alt="Icon" />
-              </a>
-              <a href="javascript:void(0);">
+              </button>
+              <button type="button" className="social-btn" aria-label="social link 3">
                 <img src={navIcon3} alt="Icon" />
-              </a>
+              </button>
             </div>
-            <p>Copyright 2022. All Rights Reserved</p>
+            <p>Copyright {new Date().getFullYear()}. All Rights Reserved</p>
         </Row>
       </Container>
     </footer>

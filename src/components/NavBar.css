@@ -21,10 +21,45 @@ nav.navbar {
     font-size: 18px;
     opacity: 0.75;
   }
-  .intro{
-    font-family: 'Tangerine', serif;
-  font-size: 48px;
-  text-shadow: 4px 4px 4px slategrey;
+  .intro-image {
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    z-index: 1;
+  }
+  /* animated rotating border ring */
+  .intro-image::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 110%;
+    height: 110%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    padding: 2px; /* thickness of the ring */
+    background: conic-gradient(from 0deg, #ffd6a5, #ffb4a2, #caffbf, #9bf6ff, #ffd6a5);
+    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 8px), black calc(100% - 7px));
+    mask: radial-gradient(farthest-side, transparent calc(100% - 8px), black calc(100% - 7px));
+    filter: blur(0.6px);
+    animation: rotate-ring 2.6s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.95;
+  }
+  .intro-image:hover {
+    transform: scale(1.04);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.32);
+  }
+
+  @keyframes rotate-ring {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
   }
   nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
   nav.navbar .navbar-nav a.nav-link.navbar-link.active {
